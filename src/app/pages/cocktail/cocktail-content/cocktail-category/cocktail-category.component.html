@@ -1,0 +1,11 @@
+<section class="cocktail-category">
+  <span class="category-name">
+    {{category.categoryName}}
+  </span>
+  <div class="category-content" >
+    <div class="cocktail-wrap" *ngFor="let cocktail of category.cocktails">
+      <img [src]="cocktail.strDrinkThumb" alt="cocktail-photo" class="cocktail-photo">
+      <span class="cocktail-name">{{cocktail.strDrink}}</span>
+    </div>
+  </div>
+</section>

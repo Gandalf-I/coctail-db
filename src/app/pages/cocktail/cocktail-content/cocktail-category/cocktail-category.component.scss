@@ -1,0 +1,72 @@
+@import "src/styles/core/breakpoints";
+
+.cocktail-category {
+  display: grid;
+  margin: 1.875rem 0 0 0;
+
+  .category-name {
+    display: grid;
+    width: 100%;
+    padding: 0 0 0.625rem 0;
+    font-size: 1.5rem;
+    color: #818181;
+    border-bottom: 1px solid #D0D0D0;
+  }
+
+  .category-content {
+    display: grid;
+    grid-template-columns: repeat(5, 9.375rem);
+    justify-content: space-between;
+    margin: 1.875rem 0 0 0;
+    grid-row-gap: 3.125rem;
+
+    .cocktail-wrap {
+      display: grid;
+      width: 100%;
+      grid-row-gap: 1.25rem;
+
+      .cocktail-name {
+        font-size: 1.125rem;
+        width: 100%;
+        text-align: center;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      .cocktail-photo {
+        justify-self: center;
+        width: 9.375rem;
+        height: 9.375rem;
+      }
+    }
+
+
+  }
+}
+
+
+
+@media screen and (max-width: $breakpointLargeDevice) {
+  .cocktail-category {
+    .category-content {
+      grid-template-columns: repeat(4, 9.375rem);
+    }
+  }
+}
+
+@media screen and (max-width: $breakpointMediumDevice) {
+  .cocktail-category {
+    .category-content {
+      grid-template-columns: repeat(3, 9.375rem);
+    }
+  }
+}
+
+@media screen and (max-width: $breakpointSmallDevice) {
+  .cocktail-category {
+    .category-content {
+      grid-template-columns: repeat(2, 9.375rem);
+    }
+  }
+}

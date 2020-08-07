@@ -1,0 +1,74 @@
+.cocktail-filter{
+  display: grid;
+  border-right: 1px solid #D0D0D0;
+  height: 100%;
+  align-content: start;
+
+  .menu {
+    display: grid;
+    grid-gap: 1.25rem;
+    margin: 1.875rem 1rem 0 2.5rem;
+
+    .label {
+      display: grid;
+      height: 1.25rem;
+      align-items: end;
+
+      .checkbox {
+        display: none;
+      }
+
+      .name {
+        display: grid;
+        position: relative;
+        height: 100%;
+        padding-left: 1.8rem;
+        color: #818181;
+        align-content: center;
+
+        &:before {
+          display: grid;
+          position: absolute;
+          content: '';
+          width: 1rem;
+          height: 1rem;
+          border: 2px solid #818181;
+          border-radius: 20%;
+          top: 0;
+          left: 0;
+          vertical-align: middle;
+        }
+
+        &:after {
+          display: grid;
+          position: absolute;
+          content: '';
+          opacity: 0;
+          left: 0.4rem;
+          top: 0.1875rem;
+          width: 0.3rem;
+          height: 0.6rem;
+          border: solid #818181;
+          border-width: 0 3px 3px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+
+      .checkbox:checked + .name:after {
+        opacity: 1;
+      }
+
+    }
+
+    .button-apply {
+      background: #4E4E4E;
+      border-radius: 0.625rem;
+      border: none;
+      color: #FFFFFF;
+      height: 2.5rem;
+    }
+  }
+}
+
