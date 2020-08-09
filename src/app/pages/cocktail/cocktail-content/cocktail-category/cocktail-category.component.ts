@@ -9,7 +9,9 @@ import {ICocktailByCategory} from '@shared/interface/cocktails-by-category';
 export class CocktailCategoryComponent implements OnInit {
   @Input()
   public category: ICocktailByCategory;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

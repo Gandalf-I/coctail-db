@@ -15,4 +15,5 @@ export class CocktailContentComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
 }

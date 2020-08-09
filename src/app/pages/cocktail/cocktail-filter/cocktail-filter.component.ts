@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {ICocktailsCategory} from '@shared/interface/cocktails-category';
 import {FormArray, FormControl, FormGroup} from '@angular/forms';
 import {CocktailService} from '@pages/cocktail/cocktail.service';
 
@@ -12,19 +10,16 @@ import {CocktailService} from '@pages/cocktail/cocktail.service';
 export class CocktailFilterComponent implements OnInit {
 
   public categoriesForm: FormGroup;
-  public categories: ICocktailsCategory[];
 
-  constructor(public cocktailService: CocktailService,
-              private route: ActivatedRoute) {
+  constructor(public cocktailService: CocktailService) {
   }
 
   ngOnInit(): void {
-    this.categories = this.route.snapshot.data.cocktail;
     this.categoriesForm = new FormGroup({
         categories: new FormArray([])
       }
     );
-    for (const category of this.categories) {
+    for (const category of this.cocktailService.categories.getValue()) {
       (<FormArray> this.categoriesForm.controls.categories).push(new FormControl(true));
     }
     this.cocktailService.getCocktailsByCategories(this.categoriesForm.value.categories);

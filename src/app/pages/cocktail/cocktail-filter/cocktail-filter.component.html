@@ -1,7 +1,7 @@
 <aside class="cocktail-filter">
   <form [formGroup]="categoriesForm">
     <div class="menu" formArrayName="categories">
-      <label class="label" *ngFor="let category of categories; let i = index">
+      <label class="label" *ngFor="let category of cocktailService.categories | async; let i = index">
         <input type="checkbox" class="checkbox" formControlName="{{i}}">
         <span class="name">{{category.strCategory}}</span>
       </label>

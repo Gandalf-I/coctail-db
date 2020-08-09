@@ -1,3 +1,5 @@
 <div class="cocktail-content">
-  <app-cocktail-category *ngFor="let category of cocktailService?.cocktailByCategory " [category]="category"></app-cocktail-category>
+  <app-cocktail-category
+    *ngFor="let category of cocktailService?.cocktailByCategory | async" [category]="category">
+  </app-cocktail-category>
 </div>
